@@ -1,0 +1,29 @@
+int lengthOfLongestSubstring(char* s) {
+    int flag,i,n,j,k,val=0,count=1;
+    char str[100];
+    n=strlen(s);
+
+    for(i=0;i<n;i++)
+    {count=1;
+        str[0]=s[i];
+     for(j=i+1;j<n;j++)
+     {
+        for(k=i;k<j;k++){
+        if(s[k]==s[j])
+        {
+            flag=1;
+            break;
+            }
+         else
+         flag=0;
+     }
+     if(flag==1)
+         break;  
+      if(flag==0)
+      count++;    
+     }
+     if(val<=count)
+     val=count;
+    }
+   return val;
+}
