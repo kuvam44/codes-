@@ -1,0 +1,11 @@
+ #include<stdlib.h>
+int* getConcatenation(int* nums, int numsSize, int* returnSize) {
+    int i;
+    *returnSize=2*numsSize;
+    int *ar=(int*)malloc(*returnSize*sizeof(int));
+    for(i=0;i<*returnSize;i++)
+    {
+        ar[i]=nums[i%numsSize];
+}
+return ar;
+}
